@@ -1,0 +1,45 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.tensorflow.lite.examples.classification">
+
+    <uses-sdk />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Apps Sampah Pintar"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/AppTheme.ImageClassification">
+        <activity
+            android:name=".SplashScreen"
+            android:label="Apps Sampah Pintar"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ClassifierActivity"
+            android:label="Scan"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Login"
+            android:label="Login"/>
+        <activity
+            android:name=".Register"
+            android:label="Register"/>
+        <activity
+            android:name=".Menu"
+            android:label="Menu"/>
+        <activity
+            android:name=".KirimSampah"
+            android:label="kirim"/>
+    </application>
+</manifest>

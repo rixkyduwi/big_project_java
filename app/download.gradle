@@ -1,0 +1,23 @@
+def targetFolder = "src/main/assets"
+def localCache = "build/intermediates/models_tflite.tgz"
+
+
+task unzipModels(type: Copy) {
+    doFirst {
+        println "Unzipping ${localCache}"
+    }
+    from tarTree("${localCache}")
+    into "${targetFolder}"
+}
+
+task cleanUnusedFiles(type: Delete, dependsOn: ['unzipModels']) {
+    delete fileTree("${targetFolder}").matching {
+        include "*.pb"
+        include "*.ckpt.*"
+        include "*.pbtxt*"
+        include "*.quant_info.*"
+        include "*.meta"
+    }
+}
+
+preBuild.dependsOn unzipModels

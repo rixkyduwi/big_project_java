@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#E0F7EF">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtscan"
+        android:text="scan"
+        android:textSize="30sp"
+        android:textColor="#000"
+        android:gravity="center"
+        android:layout_marginTop="350dp" />
+
+</RelativeLayout>
