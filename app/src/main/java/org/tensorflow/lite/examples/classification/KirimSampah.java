@@ -37,7 +37,7 @@ public class KirimSampah extends AppCompatActivity {
         CheckBox remember;
         username = (TextView) findViewById(R.id.user);
         String etuser = getIntent().getStringExtra("Extra_user");
-        username.setText("username = "+ etuser);
+        username.setText( etuser);
         jenis = (TextView) findViewById(R.id.jenissampah);
         String etjenis = getIntent().getStringExtra("Extra_jenis");
         jenis.setText("Jenis Sampah = "+ etjenis);

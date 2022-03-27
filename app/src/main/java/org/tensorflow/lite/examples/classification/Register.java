@@ -73,7 +73,7 @@ public class Register extends AppCompatActivity {
 
     void sendRequest(String type,String method,String nama,String email,String password, String no_rumah,String kontak,String value1,String value2, String value3, String value4, String value5){
         TextView username;
-        username = (TextView) findViewById(R.id.regname);
+        username = (TextView) findViewById(R.id.regemail);
         String txtusername = username.getText().toString();
         TextView respon;
         respon = (TextView) findViewById(R.id.responregister);
@@ -123,9 +123,11 @@ public class Register extends AppCompatActivity {
                 // Run view-related code back on the main thread.
                 // Here we display the response message in our text view
                 Register.this.runOnUiThread(() -> respon.setText(responseData));
-                if (responseData.equals("halo" + txtusername)){
+                if (responseData.equals("halo(('" +txtusername+ "',),)")){
                     Register.this.runOnUiThread(() -> respon.setText("Register benar"));
-                    Register.this.startActivity(new Intent((Context)Register.this, Menu.class));
+                    Intent menu = new Intent((Context) Register.this, Menu.class);
+                    menu.putExtra("Extra_name", txtusername);
+                    Register.this.startActivity(menu);
                     Register.this.finish();
                 }else{
                     Register.this.runOnUiThread(() -> respon.setText(responseData));
