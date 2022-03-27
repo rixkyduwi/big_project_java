@@ -538,9 +538,6 @@ public abstract class CameraActivity extends AppCompatActivity
         return 0;
     }
   }
-  private String url = "http://rizkycoba.herokuapp.com";//*Put your  URL here***
-  private String POST = "POST";
-  private String GET = "GET";
 
 
   @UiThread
